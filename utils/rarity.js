@@ -72,6 +72,12 @@ for (var layer in rarityData) {
   }
 }
 
+/* // printez rarity data to a json file
+fs.writeFileSync(
+  `${basePath}/build/json/rarity.json`,
+  JSON.stringify(rarityData, null, 2)
+); */
+
 // print out rarity data
 for (var layer in rarityData) {
   console.log(`Trait type: ${layer}`);

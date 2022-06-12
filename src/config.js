@@ -5,17 +5,17 @@ const { NETWORK } = require(`${basePath}/constants/network.js`);
 const network = NETWORK.eth;
 
 // General metadata for Ethereum
-const namePrefix = "Your Collection";
-const description = "Remember to replace this description";
-const baseUri = "ipfs://NewUriToReplace";
+const namePrefix = "Grillz-Bunny RichClub";
+const description = "Meet the first, unique 1:1, and rich Grillz-Bunny (G-Bunny) NFTs of the new Metaverse and Realverse. Exclusively and manually designed pixel-by-pixel crypto art #PixelArt";
+const baseUri = "ipfs://NewUriToReplace"; // This will be replaced automatically
 
 const solanaMetadata = {
-  symbol: "YC",
+  symbol: "GBRC",  // default "YC"
   seller_fee_basis_points: 1000, // Define how much % you want from secondary market sales 1000 = 10%
-  external_url: "https://www.youtube.com/c/hashlipsnft",
+  external_url: "", // https://www.grillzbunny.com
   creators: [
     {
-      address: "7fXNuer5sbZtaTEPhtJ5g5gNtuyRoKkvxdjEjEnPN4mC",
+      address: "0x2Dfb1f897fBe960CD201c99B98BE96380a1f7FB2",
       share: 100,
     },
   ],
@@ -24,15 +24,17 @@ const solanaMetadata = {
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
   {
-    growEditionSizeTo: 5,
+    growEditionSizeTo: 10, // cate imagini in total va genera programul
     layersOrder: [
       { name: "Background" },
-      { name: "Eyeball" },
-      { name: "Eye color" },
-      { name: "Iris" },
-      { name: "Shine" },
-      { name: "Bottom lid" },
-      { name: "Top lid" },
+      { name: "Base" },
+      { name: "Eyes" },
+      { name: "Glasses" },
+      { name: "Hat" },
+      { name: "Eyebrows" },
+      { name: "Mouth" },
+      { name: "Grillz" },
+      { name: "Moustache" },
     ],
   },
 ];
@@ -42,8 +44,8 @@ const shuffleLayerConfigurations = false;
 const debugLogs = false;
 
 const format = {
-  width: 512,
-  height: 512,
+  width: 500,
+  height: 500,
   smoothing: false,
 };
 
@@ -72,20 +74,23 @@ const pixelFormat = {
 };
 
 const background = {
-  generate: true,
+  generate: false,
   brightness: "80%",
   static: false,
   default: "#000000",
 };
 
-const extraMetadata = {};
+//const extraMetadata = {};
+const extraMetadata = {
+  creator: "G-Bunny Omega",
+};
 
 const rarityDelimiter = "#";
 
-const uniqueDnaTorrance = 10000;
+const uniqueDnaTorrance = 9000;
 
 const preview = {
-  thumbPerRow: 5,
+  thumbPerRow: 50, //default 5
   thumbWidth: 50,
   imageRatio: format.height / format.width,
   imageName: "preview.png",
